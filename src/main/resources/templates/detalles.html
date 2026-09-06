@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Detalles de Venta</title>
+</head>
+<body style="font-family: Arial, sans-serif; margin: 30px;">
+<h2>Detalles de Venta Registrados</h2>
+<table border="1" cellpadding="8" cellspacing="0" style="border-collapse: collapse;">
+    <thead>
+    <tr style="background-color: #f2f2f2;">
+        <th>ID Detalle</th>
+        <th>Producto</th>
+        <th>Cantidad</th>
+        <th>Precio Unit.</th>
+        <th>ID Venta</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="det : ${detalles}">
+        <td th:text="${det.idDetalle}"></td>
+        <td th:text="${det.producto != null ? det.producto.nombre : 'N/A'}"></td>
+        <td th:text="${det.cantidad}"></td>
+        <td th:text="${det.precioUnidad}"></td>
+        <td th:text="${det.venta != null ? det.venta.idVenta : 'N/A'}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
