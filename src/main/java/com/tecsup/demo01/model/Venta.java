@@ -13,7 +13,7 @@ public class Venta {
     private Long idVenta;
 
     private LocalDate fecha;
-    private double total;
+    private Double total;
 
     @ManyToOne
     @JoinColumn(name = "id_cliente")
@@ -25,7 +25,7 @@ public class Venta {
 
     public Venta() {}
 
-    public Venta(Long idVenta, LocalDate fecha, double total, Cliente cliente, Empleado empleado) {
+    public Venta(Long idVenta, LocalDate fecha, Double total, Cliente cliente, Empleado empleado) {
         this.idVenta = idVenta;
         this.fecha = fecha;
         this.total = total;
@@ -39,8 +39,8 @@ public class Venta {
     public LocalDate getFecha() { return fecha; }
     public void setFecha(LocalDate fecha) { this.fecha = fecha; }
 
-    public double getTotal() { return total; }
-    public void setTotal(double total) { this.total = total; }
+    public Double getTotal() { return total; }
+    public void setTotal(Double total) { this.total = total; }
 
     public Cliente getCliente() { return cliente; }
     public void setCliente(Cliente cliente) { this.cliente = cliente; }
